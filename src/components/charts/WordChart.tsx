@@ -1,4 +1,3 @@
-
 import { Card } from '@/components/ui/card';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import { WordData } from '@/types/chat';
@@ -56,7 +55,7 @@ const WordChart = ({ data }: WordChartProps) => {
       <div className="mt-6 flex flex-wrap gap-2">
         {topWords.slice(0, 10).map((word, index) => (
           <span 
-            key={word.word}
+            key={`${word.word}-${word.sender}`}
             className="px-3 py-1 bg-gradient-to-r from-pink-100 to-purple-100 rounded-full text-sm"
             style={{ 
               fontSize: `${Math.max(12, Math.min(18, word.count / 2 + 12))}px`
